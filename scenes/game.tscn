@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://krm33upwlo4b"]
+[gd_scene load_steps=13 format=3 uid="uid://krm33upwlo4b"]
 
 [ext_resource type="PackedScene" uid="uid://bykyxxpf1blgb" path="res://scenes/player.tscn" id="1_1ervv"]
 [ext_resource type="Texture2D" uid="uid://ccgi3igox3crx" path="res://Assets/sprites/world_tileset.png" id="2_v81vf"]
@@ -410,6 +410,11 @@ texture = ExtResource("2_v81vf")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hj7jh")
 
+[sub_resource type="GDScript" id="GDScript_5h0pj"]
+script/source = "extends TileMap
+
+"
+
 [sub_resource type="Animation" id="Animation_g6dnw"]
 length = 0.001
 tracks/0/type = "value"
@@ -448,28 +453,29 @@ _data = {
 "move": SubResource("Animation_j8yoe")
 }
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uh8do"]
-distance = -9.0
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xky0x"]
+distance = 0.241768
 
 [node name="Game" type="Node2D"]
 position = Vector2(-1, 0)
-
-[node name="Player" parent="." instance=ExtResource("1_1ervv")]
-position = Vector2(-337, -33)
-collision_layer = 0
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(47, -3)
-zoom = Vector2(4, 4)
-limit_bottom = 135
-limit_smoothed = true
-position_smoothing_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-234, -33)
 tile_set = SubResource("TileSet_rlnbp")
 format = 2
 layer_0/tile_data = PackedInt32Array(196600, 0, 0, 196601, 0, 0, 196602, 0, 0, 262136, 0, 1, 262137, 0, 1, 262138, 0, 1, 327672, 65536, 0, 327673, 0, 1, 327674, 65536, 0, 327675, 0, 1, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 196607, 0, 0, 131072, 0, 0, 327676, 0, 1, 327677, 0, 1, 262143, 0, 1, 327679, 65536, 0, 262144, 65536, 0, 196608, 0, 1, 131075, 0, 0, 131076, 0, 0, 196611, 0, 1, 262147, 0, 1, 196612, 0, 1, 262148, 65536, 0, 65542, 0, 0, 65543, 0, 0, 131078, 0, 1, 131079, 0, 1, 196614, 65536, 0, 196615, 65536, 1, 262151, 65536, 0, 262150, 65536, 1, -65528, 0, 0, 8, 0, 1, 65544, 0, 1, 9, 0, 1, 65545, 0, 1, -65527, 0, 0, 131080, 65536, 0, 196617, 65536, 0, 262152, 0, 1, 131081, 65536, 1, 196616, 0, 1, 262153, 0, 1, -65524, 0, 0, -65522, 0, 0, -65523, 0, 0, -65521, 589824, 0, -65520, 655360, 0, -65519, 655360, 0, -65518, 655360, 0, -65517, 720896, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, 13, 0, 1, 65548, 0, 1, 65550, 0, 1, 131084, 0, 1, 131086, 0, 1, 14, 0, 1, 12, 0, 1, 65549, 65536, 0, 131085, 65536, 0, 262156, 65536, 1, 262157, 0, 1, 262158, 65536, 1, 327692, 65536, 0, 393228, 65536, 1, 327693, 0, 1, 393229, 0, 1, 327694, 65536, 0, 393230, 65536, 1, 327689, 65536, 0, 393225, 65536, 1, 327687, 0, 1, 393223, 65536, 1, 327688, 0, 1, 393224, 65536, 1, 327686, 0, 1, 393222, 65536, 1, 327684, 65536, 0, 393220, 0, 1, 327683, 0, 1, 393219, 0, 1, 327680, 65536, 0, 393216, 65536, 1, 393215, 0, 1, 458751, 65536, 1, 393212, 65536, 0, 458748, 65536, 1, 393213, 65536, 0, 458749, 65536, 1, 393211, 65536, 0, 458747, 0, 1, 393210, 0, 1, 458746, 65536, 1, 393209, 65536, 0, 458745, 65536, 1, 393208, 65536, 0, 458744, 65536, 1, 20, 0, 1, 21, 0, 1, 22, 0, 1, 65558, 0, 1, 65556, 0, 1, 65557, 65536, 1, 131093, 65536, 1, 131092, 65536, 0, 131094, 65536, 0, 196630, 0, 1, 196628, 0, 1, 196629, 0, 1, 262165, 0, 1, 262164, 65536, 1, 262166, 65536, 1, 327701, 65536, 1, 393237, 65536, 1, 327700, 65536, 1, 393236, 65536, 1, 327702, 65536, 1, 393238, 65536, 1, -65513, 0, 0, -65512, 0, 0, -65511, 0, 0, -65510, 0, 0, -65509, 0, 0, -65508, 0, 0, -65507, 0, 0, -65506, 0, 0, -65505, 0, 0, -65504, 0, 0, 23, 0, 1, 65559, 0, 1, 131095, 0, 1, 65560, 65536, 1, 24, 0, 1, 25, 0, 1, 26, 0, 1, 65562, 0, 1, 27, 0, 1, 65561, 65536, 1, 28, 0, 1, 29, 0, 1, 30, 0, 1, 65563, 0, 1, 131097, 0, 1, 131096, 0, 1, 131098, 0, 1, 196632, 0, 1, 196631, 0, 1, 262167, 0, 1, 196633, 65536, 1, 327704, 65536, 1, 262168, 65536, 1, 327703, 65536, 1, 65564, 65536, 1, 131099, 65536, 1, 31, 65536, 1, -131050, 0, 5, -196586, 0, 4, -262122, 0, 4, -327658, 0, 3, -131046, 65536, 4, 7, 65536, 4, -131059, 65536, 3, 196620, 0, 1, 196621, 0, 1, 196622, 0, 1, 131066, 65536, 3, 131064, 393216, 5, 65528, 393216, 4, -8, 393216, 4, -65544, 393216, 3, -131040, 458752, 3, -196576, 0, 7)
+script = SubResource("GDScript_5h0pj")
+
+[node name="Player" parent="." instance=ExtResource("1_1ervv")]
+position = Vector2(-337, -33)
+collision_layer = 0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(55, 2)
+zoom = Vector2(4, 4)
+limit_bottom = 135
+limit_smoothed = true
+position_smoothing_enabled = true
 
 [node name="PlatForm" parent="." instance=ExtResource("3_7beey")]
 position = Vector2(97, -205)
@@ -481,7 +487,7 @@ libraries = {
 autoplay = "move"
 
 [node name="Coin" parent="." instance=ExtResource("4_1akfw")]
-position = Vector2(-303, -3)
+position = Vector2(-288, -19)
 
 [node name="Coin2" parent="." instance=ExtResource("4_1akfw")]
 position = Vector2(-234, -31)
@@ -493,8 +499,9 @@ position = Vector2(-169, -20)
 position = Vector2(336, -62)
 
 [node name="KillZone" parent="." instance=ExtResource("5_h2nmh")]
-position = Vector2(-48, -78)
+position = Vector2(41, 82)
+rotation = 0.00189282
+scale = Vector2(10.33, 2.05374)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(-210, 150)
-shape = SubResource("WorldBoundaryShape2D_uh8do")
+shape = SubResource("WorldBoundaryShape2D_xky0x")
